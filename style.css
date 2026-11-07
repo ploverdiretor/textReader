@@ -241,7 +241,26 @@ textarea::placeholder {
     font-size: 14px;
     flex: 1;
 }
+/* ★新設：テキスト成形リンクのボックススタイル */
+.nav-switch-box {
+    width: 100%;
+    text-align: center;
+    padding-top: 6px;
+    margin-bottom: -4px; /* カード内の余白を微調整して下部に収める */
+}
 
+.nav-switch-box a {
+    font-size: 11px; /* 小さく目立たないサイズ */
+    color: var(--text-muted); /* 目立たないアッシュ系のセカンダリグレー */
+    text-decoration: none; /* 下線を消して文字に馴染ませる */
+    letter-spacing: 0.5px;
+    transition: color 0.2s;
+}
+
+.nav-switch-box a:hover {
+    color: var(--primary-color); /* ホバーしたときだけ上品なアッシュブルーに変化 */
+    text-decoration: underline; /* ホバー時のみ下線を表示 */
+}
 /* ボタン個別のカラー */
 #speak-btn {
     width: 100%;

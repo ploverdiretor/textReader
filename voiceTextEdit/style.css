@@ -1,0 +1,210 @@
+/* ==========================================
+   深閑の書架 イメージカラーパレット
+   上品で知的な目に優しいディープネイビーver
+   ========================================== */
+:root {
+    --bg-color: #20232a;        /* 静寂を感じる深いディープネイビーグレー */
+    --card-bg: #282c34;         /* テキストが引き立つ落ち着いたミッドナイトグレー */
+    --text-color: #e3e6ed;      /* 眩しさをカットした、やや青みのある柔らかな白 */
+    --text-muted: #8892b0;      /* 知的なアッシュ系のセカンダリグレー */
+    --primary-color: #6a7f93;   /* 上品なアッシュブルー */
+    --primary-hover: #54687c;   /* ボタンホバー時の深みのあるブルー */
+    --border-color: #3b4252;    /* 境界線 */
+}
+
+* {
+    box-shadow: none;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    background-image: 
+    linear-gradient(rgba(32, 35, 42, 0.92), rgba(32, 35, 42, 0.92)), 
+    url('./Library2.jpg');
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1400px;
+    height: 100vh;
+    padding: 24px;
+}
+
+.app-header {
+    text-align: center;
+    padding-bottom: 16px;
+}
+.app-header h1 {
+    font-size: 28px;
+    font-weight: 300; 
+    margin: 0;
+    color: var(--primary-color);
+    letter-spacing: 3px; 
+}
+
+/* 2つの主要な列を横に並べる */
+.app-main {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 24px;
+    width: 100%;
+    height: calc(100vh - 120px);
+    margin-bottom: 8px;
+}
+
+/* 左右の共通カラムラッパー */
+.column-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: 12px;
+}
+
+.column-header {
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+    padding-left: 4px;
+}
+
+textarea {
+    flex: 1;
+    width: 100%;
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+    font-size: 16px;
+    line-height: 1.7;
+    letter-spacing: 0.5px;
+    resize: none;
+    outline: none;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.2s;
+}
+
+textarea:focus, input[type="text"]:focus {
+    border-color: var(--primary-color);
+}
+
+textarea::placeholder, input[type="text"]::placeholder {
+    color: var(--text-muted);
+}
+
+/* 【新設】単語置換ブロックのスタイル */
+.replace-block {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background-color: rgba(40, 44, 52, 0.5); /* ほんのり背景を敷いてグループ化 */
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 12px;
+}
+
+.replace-inputs-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+input[type="text"] {
+    flex: 1;
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 10px 12px;
+    font-size: 14px;
+    outline: none;
+}
+
+.arrow-icon {
+    color: var(--text-muted);
+    font-weight: bold;
+}
+
+#replace-btn {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 14px;
+    background-color: #3e4452; /* 落ち着いたダークグレー */
+}
+
+/* 操作ボタンブロック */
+.control-buttons-block {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.action-buttons-row {
+    display: flex;
+    gap: 12px;
+    width: 100%;
+}
+
+button {
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+button:hover {
+    filter: brightness(1.1);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* ボタン個別のカラー */
+#format-btn { 
+    width: 100%;
+    padding: 14px 0;
+    font-size: 16px;
+    background-color: var(--primary-color); 
+} 
+#save-btn { 
+    flex: 1;
+    padding: 14px 0;
+    font-size: 15px;
+    background-color: #4b6a5a; 
+}   
+#clear-btn { 
+    flex: 1;
+    padding: 14px 0;
+    font-size: 15px;
+    background-color: #4c566a; 
+}  
+
+.app-footer {
+    width: 100%;
+    padding-top: 4px;
+}
+
+.status {
+    text-align: center;
+    font-size: 14px;
+    color: var(--text-muted);
+    min-height: 20px;
+    width: 100%;
+}

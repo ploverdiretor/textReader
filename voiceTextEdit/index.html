@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>深閑の書架 - テキスト成形</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <h1>深閑の書架 — テキスト成形</h1>
+        </header>
+
+        <main class="app-main">
+            <!-- ①左側の列：未成形テキスト入力エリア -->
+            <div class="column-wrapper">
+                <div class="column-header">成形前のテキスト</div>
+                <textarea id="raw-text-input" placeholder="ここに成形前の文章を貼り付けてください..."></textarea>
+                
+                <!-- 成形アクションボタン -->
+                <div class="control-buttons-block">
+                    <button id="format-btn">テキストを成形して右へ送る</button>
+                </div>
+            </div>
+
+            <!-- ②右側の列：成形済みテキスト出力・管理エリア -->
+            <div class="column-wrapper">
+                <div class="column-header">成形後のテキスト（蓄積・編集エリア）</div>
+                <!-- ★ readonly を削除し、自由に直接編集できるようになりました -->
+                <textarea id="text-input" placeholder="成形された文章がここに蓄積されます。ここから直接編集も可能です..."></textarea>
+                
+                <!-- 単語置換コントロールブロック -->
+                <div class="replace-block">
+                    <div class="replace-inputs-row">
+                        <input type="text" id="find-word" placeholder="置換前の単語">
+                        <span class="arrow-icon">→</span>
+                        <input type="text" id="replace-word" placeholder="置換後の単語">
+                    </div>
+                    <button id="replace-btn">右側のテキストを一括置換する</button>
+                </div>
+
+                <!-- 管理用ボタンブロック（横並び） -->
+                <div class="control-buttons-block">
+                    <div class="action-buttons-row">
+                        <button id="save-btn">ファイルに保存</button>
+                        <button id="clear-btn">クリア</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="app-footer">
+            <div class="status" id="status-message"></div>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
