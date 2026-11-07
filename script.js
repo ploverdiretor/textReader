@@ -1,4 +1,4 @@
-const voicevoxUrl = 'http://localhost:50121'; // Nemo用ポート
+const voicevoxUrl = 'http://127.0.0.1:50121'; // Nemo用ポート
 let speakerId = 10005; // Nemo女性ボイス
 
 // 句点（文章の区切り）で空けたい間の長さ（ミリ秒単位。1000 = 1秒 / 500 = 0.5秒）
