@@ -167,7 +167,7 @@ async function fetchAudioAtIndex(index) {
     const text = textSentences[index];
 
     const queryUrl = `${voicevoxUrl}/audio_query?text=${encodeURIComponent(text)}&speaker=${speakerId}`;
-    const queryResponse = await fetch(queryUrl, { method: 'POST' });
+    const queryResponse = await fetch(queryUrl, { method: 'POST' ,mode: 'no-cors'});
     if (!queryResponse.ok) throw new Error('音声クエリの作成に失敗しました。');
     const queryData = await queryResponse.json();
 
@@ -179,7 +179,7 @@ async function fetchAudioAtIndex(index) {
     const synthesisResponse = await fetch(synthesisUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(queryData)
+        body: JSON.stringify(queryData),mode: 'no-cors'
     });
     if (!synthesisResponse.ok) throw new Error('音声の合成に失敗しました。');
 
